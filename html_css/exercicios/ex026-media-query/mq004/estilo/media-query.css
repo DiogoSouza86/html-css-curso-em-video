@@ -1,47 +1,66 @@
-/* versão mobile first*/
+/* todas as demais Medias */
 
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3em;
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+/* typical device breakpoints
+celular: de 600px até 768px
+tablete: de 768px até 992px
+desktop: de 992px até 1200px
+grandes telas:  acima de 1200px
+*/
+
+@media print {
+    *{
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    body{
+        width: 90pw;
+        background-image: url(../imagens/back-print.jpg);/*é desnecessário pq o background image não sai na impressão*/      
+    }
+
+    main {
+        border: 2px solid black;
+    }
+
+    main h1 {
+        text-shadow: none;
+        color: black;
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: none;}
+    img#tv{display: none;}
+    img#print{display: block;}
+    img#pc{display: none;}
 }
 
-html {
-    height: 100vh;
+@media screen and (min-width: 768px) and (max-width: 992px){
+    body{
+        background: url(../imagens/back-tablet.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: block;}
+    img#tv{display: none;}
+    img#print{display: none;}
+    img#pc{display: none;}
 }
 
-body{
-    background: black url(../imagens/back-phone.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
+@media screen and (min-width: 993px) and (max-width: 1200px){
+    body{
+        background: url(../imagens/back-pc.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    img#phone{display: none;}
+    img#tablet{display: none;}
+    img#tv{display: none;}
+    img#print{display: none;}
+    img#pc{display: block;}
 }
 
-main{
-    background-color: rgba(255, 255, 255, 0.555);
-    width: 90vw;
-    margin: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 10px;
+@media  and (min-width: 1200px) {
+    
 }
-
-h1 {
-    text-align: center;
-    font-weight: bold;
-}
-
-img {
-    display: block;
-    margin: auto;
-}
-
-img#phone{display: block;}
-img#tablet{display: none;}
-img#tv{display: none;}
-img#print{display: none;}
-img#pc{display: none;}
-
-
-
